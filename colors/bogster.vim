@@ -15,6 +15,8 @@ let g:bogster_colors = {
   \ "base4"        : ["#536984", 240],
   \ "base5"        : ["#627d9d", 241],
   \ "base6"        : ["#9ea4c2", 247],
+  \ "base7"        : ["#b6b6c9", 249],
+  \ "base8"        : ["#cbc7d0", 250],
   \ "fg0"          : ["#c6b8ad", 251],
   \ "fg1"          : ["#e5ded6", 253],
   \ "red"          : ["#d32c5d", 204],
@@ -95,16 +97,6 @@ if has('*term_setansicolors')
     let g:terminal_ansi_colors[15] = g:bogster_colors["fg1"][0]
 endif
 
-if !exists("g:gh_color")
-    let g:gh_color = "hard"
-endif
-
-"if g:gh_color ==# "soft"
-    "let g:bogster_colors["base0"] = g:bogster_colors["base1"]
-    "let g:bogster_colors["base1"] = g:bogster_colors["base2"]
-    "let g:bogster_colors["base2"] = ["#30353c", 238]
-"endif
-
 "########################################
 " funcs
 
@@ -159,7 +151,6 @@ call s:__hl("BogsterOrange", "orange")
 call s:__hl("BogsterYellow", "yellow")
 call s:__hl("BogsterYellowBold", "yellow", "none", "bold")
 call s:__hl("BogsterLTeal", "lteal")
-call s:__hl("BogsterPink", "pink")
 call s:__hl("BogsterLBlue", "lblue")
 call s:__hl("BogsterBlue", "blue")
 call s:__hl("BogsterBlueItalic", "blue", "none", "italic")
@@ -236,7 +227,7 @@ hi! link PreCondit PreProc
 hi! link PreProc BogsterOrange
 hi! link Question BogsterFg0
 hi! link Quote StringDelimiter
-hi! link Repeat BogsterPurp
+hi! link Repeat BogsterOrange
 hi! link Searchlight Search
 hi! link SignifySignAdd Signify
 hi! link SignifySignChange Signify
@@ -290,15 +281,15 @@ hi! link cConstant BogsterLBlue
 hi! link CocErrorSign ErrorMsg
 hi! link CocWarningSign WarningMsg
 hi! link CocInfoSign BogsterLBlue
-hi! link CocHintSign BogsterPurp
+hi! link CocHintSign BogsterTeal
 hi! link CocErrorFloat ErrorMsg
 hi! link CocWarningFloat WarningMsg
 hi! link CocInfoFloat BogsterLBlue
-hi! link CocHintFloat BogsterPurp
+hi! link CocHintFloat BogsterTeal
 hi! link CocDiagnosticsError ErrorMsg
 hi! link CocDiagnosticsWarning WarningMsg
 hi! link CocDiagnosticsInfo BogsterLBlue
-hi! link CocDiagnosticsHint BogsterPurp
+hi! link CocDiagnosticsHint BogsterTeal
 hi! link CocSelectedText BogsterLRed
 hi! link CocCodeLens BogsterBase3
 
