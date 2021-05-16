@@ -151,10 +151,13 @@ call s:__hl("BogsterBase5", "base5")
 call s:__hl("BogsterBase6", "base6")
 call s:__hl("BogsterFg0", "fg0")
 call s:__hl("BogsterFg1", "fg1")
+call s:__hl("BogsterFg1Bold", "fg1", "none", "bold")
 call s:__hl("BogsterLRed", "lred")
 call s:__hl("BogsterRed", "lred")
+call s:__hl("BogsterRedUnder", "lred", "none", "undercurl")
 call s:__hl("BogsterOrange", "orange")
 call s:__hl("BogsterYellow", "yellow")
+call s:__hl("BogsterYellowBold", "yellow", "none", "bold")
 call s:__hl("BogsterLTeal", "lteal")
 call s:__hl("BogsterPink", "pink")
 call s:__hl("BogsterLBlue", "lblue")
@@ -262,11 +265,25 @@ hi! link Type BogsterLRed
 hi! link ALEVirtualTextError ErrorMsg
 hi! link ALEVirtualTextWarning WarningMsg
 
+" asm
+
+hi! link asmIdentifier Identifier
+hi! link asmDirective Function
+
 " bib
 
 hi! link bibEntryKw LibraryIdent
 hi! link bibKey IdentifierDef
 hi! link bibType LibraryType
+
+" C
+
+hi! link cInclude PreProc
+hi! link cIncluded Directory
+hi! link cSpecial BogsterLGreen
+hi! link cRepeat Keyword
+hi! link cLabel BogsterOrange
+hi! link cConstant BogsterLBlue
 
 " Coc
 
@@ -300,6 +317,7 @@ hi! link cssFunctionComma Normal
 hi! link cssBraces Normal
 hi! link cssSelectorOp Operator
 hi! link cssSelectorOp2 Operator
+
 " diff
 
 hi! link diffAdded DiffAdd
@@ -333,6 +351,22 @@ hi! link jsFunction Keyword
 hi! link jsOperatorKeyword Keyword
 hi! link jsGlobalObjects BogsterLRed
 hi! link jsSpecial Special
+
+" markdown
+
+hi! link markdownH1 BogsterYellowBold
+hi! link markdownH2 markdownH1
+hi! link markdownH3 markdownH1
+hi! link markdownH4 markdownH1
+hi! link markdownH5 markdownH1
+hi! link markdownLinkText BogsterRedUnder
+hi! link markdownUrl BogsterLBlue
+hi! link markdownBold BogsterFg1Bold
+hi! link markdownCode Quote
+hi! link markdownHeadingRule Operator
+hi! link markdownHeadingDelimiter Operator
+hi! link markdownCodeDelimiter Operator
+hi! link markdownListMarker Operator
 
 " shell
 hi! link shVariable BogsterFg1
@@ -385,3 +419,4 @@ hi! link vimCommand Keyword
 hi! link vimHiGroup Identifier
 hi! link vimGroup Identifier
 hi! link vimContinue vimOper
+hi! link vimUserFunc Function
