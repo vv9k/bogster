@@ -18,4 +18,4 @@ colorscheme bogster
 ![screenshot](https://raw.githubusercontent.com/wojciechkepka/bogster/master/assets/screen.png)
 
 ## License
-[MIT](https://raw.githubusercontent.com/wojciechkepka/pkger/master/LICENSE)
+[MIT](https://raw.githubusercontent.com/wojciechkepka/bogster/master/LICENSE)
