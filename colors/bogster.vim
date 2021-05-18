@@ -190,7 +190,7 @@ call s:__hl("WarningMsg", "orange", "base1")
 hi! link Special BogsterLGreen
 hi! link Boolean Constant
 hi! link Character Constant
-hi! link Comment BogsterBase4
+hi! link Comment BogsterBase5
 hi! link Conceal Ignore
 hi! link Conditional Statement
 hi! link Constant Bogsterlteal
