@@ -62,7 +62,7 @@ if has('nvim')
     let g:terminal_color_13 = g:bogster_colors["pink"][0]
 
     let g:terminal_color_6 = g:bogster_colors["teal"][0]
-    let g:terminal_color_14 = g:bogster_colors["lteal"][0] 
+    let g:terminal_color_14 = g:bogster_colors["lteal"][0]
 
     let g:terminal_color_7 = g:bogster_colors["fg0"][0]
     let g:terminal_color_15 = g:bogster_colors["fg1"][0]
@@ -116,13 +116,13 @@ function! s:__hl(group, guifg, ...)
     else
         let style = "NONE"
     endif
-    
+
     let hi_str = [ "hi", a:group,
             \ 'guifg=' . fg[0], "ctermfg=" . fg[1],
             \ 'guibg=' . bg[0], "ctermbg=" . bg[1],
             \ 'gui=' . style, "cterm=" . style
             \ ]
-    
+
     execute join(hi_str, ' ')
 endfunction
 
@@ -266,6 +266,11 @@ hi! link asmDirective Function
 hi! link bibEntryKw LibraryIdent
 hi! link bibKey IdentifierDef
 hi! link bibType LibraryType
+
+" buftabline
+hi! link BufTabLineCurrent Pmenu
+hi! link BufTabLineActive PmenuSel
+
 
 " C
 
