@@ -342,6 +342,7 @@ hi! link jsFunction Keyword
 hi! link jsOperatorKeyword Keyword
 hi! link jsGlobalObjects BogsterLRed
 hi! link jsSpecial Special
+hi! link jsExport BogsterLRed
 
 " markdown
 
