@@ -41,3 +41,8 @@ let s:V3 = [ s:base5, s:base1, '', '' ]
 let g:airline#themes#bogster#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 let g:airline#themes#bogster#palette.visual.airline_error = [ s:base0, s:red, '', '' ,'bold']
 let g:airline#themes#bogster#palette.visual.airline_warning = [ s:base0, s:orange, '', '' , 'bold']
+
+let s:IN1 = [ s:base5, s:base2, '', '' ]
+let s:IN2 = [ s:base5, s:base1, '', '' ]
+let s:IN3 = [ s:base5, s:base1, '', '' ]
+let g:airline#themes#bogster#palette.inactive = airline#themes#generate_color_map(s:IN1, s:IN2, s:IN3)
