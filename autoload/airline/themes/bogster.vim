@@ -14,28 +14,34 @@ let s:yellow      = g:bogster_colors["yellow"][0]
 let s:lblue = g:bogster_colors["lblue"][0]
 let s:blue      = g:bogster_colors["blue"][0]
 
-let s:N1 = [ s:base0, s:lblue, '', '' ]
+if (&background ==# 'light')
+    let s:fg = s:fg0
+else
+    let s:fg = s:base0
+endif
+
+let s:N1 = [ s:fg, s:lblue, '', '' ]
 let s:N2 = [ s:fg0, s:base1, '', '' ]
 let s:N3 = [ s:base5, s:base1, '', '' ]
 let g:airline#themes#bogster#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 let g:airline#themes#bogster#palette.normal.airline_error = [ s:base0, s:red, '', '' ,'bold']
 let g:airline#themes#bogster#palette.normal.airline_warning = [ s:base0, s:orange, '', '' , 'bold']
 
-let s:I1 = [ s:base0, s:red, '', '' ]
+let s:I1 = [ s:fg, s:red, '', '' ]
 let s:I2 = [ s:fg0, s:base1, '', '' ]
 let s:I3 = [ s:base5, s:base1, '', '' ]
 let g:airline#themes#bogster#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 let g:airline#themes#bogster#palette.insert.airline_error = [ s:base0, s:red, '', '' ,'bold']
 let g:airline#themes#bogster#palette.insert.airline_warning = [ s:base0, s:orange, '', '' , 'bold']
 
-let s:R1 = [ s:base0, s:blue, '', '' ]
+let s:R1 = [ s:fg, s:blue, '', '' ]
 let s:R2 = [ s:fg0, s:base1, '', '' ]
 let s:R3 = [ s:base5, s:base1, '', '' ]
 let g:airline#themes#bogster#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 let g:airline#themes#bogster#palette.replace.airline_error = [ s:base0, s:red, '', '' ,'bold']
 let g:airline#themes#bogster#palette.replace.airline_warning = [ s:base0, s:orange, '', '' , 'bold']
 
-let s:V1 = [ s:base0, s:yellow, '', '' ]
+let s:V1 = [ s:fg, s:yellow, '', '' ]
 let s:V2 = [ s:fg0, s:base1, '', '' ]
 let s:V3 = [ s:base5, s:base1, '', '' ]
 let g:airline#themes#bogster#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
