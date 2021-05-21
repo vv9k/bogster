@@ -149,6 +149,7 @@ if (&background ==# 'light')
     call s:__hl("BogsterLRed", "red")
     call s:__hl("BogsterRed", "red")
     call s:__hl("BogsterRedUnder", "red", "none", "undercurl")
+    call s:__hl("BogsterRedBold", "red", "none", "bold")
     call s:__hl("BogsterOrange", "orange")
     call s:__hl("BogsterYellow", "dyellow")
     call s:__hl("BogsterYellowBold", "dyellow", "none", "bold")
@@ -157,19 +158,22 @@ if (&background ==# 'light')
     call s:__hl("BogsterLBlue", "blue")
     call s:__hl("BogsterBlue", "dblue")
     call s:__hl("BogsterBlueItalic", "dblue", "none", "italic")
+    call s:__hl("BogsterBlueUnder", "dblue", "none", "underline")
     call s:__hl("BogsterLGreen", "green")
 else
     call s:__hl("BogsterLRed", "lred")
     call s:__hl("BogsterRed", "red")
-    call s:__hl("BogsterRedUnder", "lred", "none", "undercurl")
+    call s:__hl("BogsterRedUnder", "red", "none", "undercurl")
+    call s:__hl("BogsterRedBold", "red", "none", "bold")
     call s:__hl("BogsterOrange", "orange")
     call s:__hl("BogsterYellow", "yellow")
     call s:__hl("BogsterYellowBold", "yellow", "none", "bold")
     call s:__hl("BogsterLTeal", "lteal")
     call s:__hl("BogsterTeal", "teal")
-    call s:__hl("BogsterLBlue", "blue")
+    call s:__hl("BogsterLBlue", "lblue")
     call s:__hl("BogsterBlue", "blue")
     call s:__hl("BogsterBlueItalic", "blue", "none", "italic")
+    call s:__hl("BogsterBlueUnder", "blue", "none", "underline")
     call s:__hl("BogsterLGreen", "lgreen")
 endif
 
@@ -217,25 +221,26 @@ call s:__hl("WarningMsg", "orange", "base1")
 " links
 
 hi! link Special BogsterLGreen
-hi! link Boolean Constant
+hi! link Boolean Number
 hi! link Character Constant
 hi! link Comment BogsterBase5
+hi! link Ignore BogsterBase5
 hi! link Conceal Ignore
 hi! link Conditional Statement
 hi! link Constant Bogsterlteal
 hi! link Debug Special
 hi! link Define PreProc
-hi! link Delimiter BogsterFg1
+hi! link Delimiter BogsterOrange
 hi! link Directory BogsterLBlue
 hi! link Exception Statement
 hi! link Float Number
 hi! link FunctionDef Function
 hi! link Function BogsterLBlue
-hi! link Identifier BogsterLRed
-hi! link Include Statement
+hi! link Identifier BogsterFg1
+hi! link Include PreProc
 hi! link IncSearch Search
 hi! link Keyword BogsterYellow
-hi! link Label BogsterLBlue
+hi! link Label BogsterBlue
 hi! link LibraryFunc Function
 hi! link LibraryIdent Identifier
 hi! link LibraryType Type
@@ -256,15 +261,13 @@ hi! link PreCondit PreProc
 hi! link PreProc BogsterOrange
 hi! link Question BogsterFg0
 hi! link Quote StringDelimiter
-hi! link Repeat BogsterOrange
+hi! link Repeat Statement
 hi! link Searchlight Search
 hi! link SignifySignAdd Signify
 hi! link SignifySignChange Signify
 hi! link SignifySignDelete Signify
+hi! link Special BogsterLGreen
 hi! link SpecialChar Special
-hi! link Special BogsterLBlue
-hi! link SpecialKey BogsterBase3
-hi! link SpecialKey Ignore
 hi! link Statement BogsterYellow
 hi! link StatusLineTermNC StatusLineNC
 hi! link StatusLineTerm StatusLine
@@ -278,7 +281,9 @@ hi! link TabLine StatusLineNC
 hi! link Tag Special
 hi! link Terminal Normal
 hi! link Title BogsterFg0
+hi! link Todo BogsterRedBold
 hi! link Type BogsterLRed
+hi! link Underlined BogsterBlueUnder
 
 " ALE
 
@@ -442,7 +447,7 @@ hi! link vimOper Operator
 hi! link vimLet Keyword
 hi! link vimNotFunc Keyword
 hi! link vimCommand Keyword
-hi! link vimHiGroup Identifier
-hi! link vimGroup Identifier
+hi! link vimHiGroup Type
+hi! link vimGroup Type
 hi! link vimContinue vimOper
 hi! link vimUserFunc Function
