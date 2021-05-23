@@ -171,6 +171,13 @@ call s:__hl("DiffAdd", "green", "base0")
 call s:__hl("DiffChange", "yellow", "base0")
 call s:__hl("DiffDelete", "lred", "base0")
 call s:__hl("ErrorMsg", "red", "base1")
+call s:__hl("ErrorMsgInverse", "base1", "red")
+call s:__hl("WarningMsg", "orange", "base1")
+call s:__hl("WarningMsgInverse", "base1", "orange")
+call s:__hl("InfoMsgInverse", "base1", "lblue")
+call s:__hl("InfoMsg", "lblue", "base1")
+call s:__hl("HintMsgInverse", "base1", "teal")
+call s:__hl("HintMsg", "teal", "base1")
 call s:__hl("Error", "none", "lred")
 call s:__hl("Folded", "fg0", "base1")
 call s:__hl("MatchParen", "none", "base3")
@@ -184,7 +191,6 @@ call s:__hl("StatusLineNC", "base1", "base3")
 call s:__hl("Todo", "fg0", "base0")
 call s:__hl("VertSplit", "base1", "base1")
 call s:__hl("Visual", "none", "base0", "reverse")
-call s:__hl("WarningMsg", "orange", "base1")
 
 "########################################
 " links
@@ -286,18 +292,18 @@ hi! link cConstant BogsterLBlue
 
 " Coc
 
-hi! link CocErrorSign ErrorMsg
-hi! link CocWarningSign WarningMsg
-hi! link CocInfoSign BogsterLBlue
-hi! link CocHintSign BogsterTeal
+hi! link CocErrorSign ErrorMsgInverse
+hi! link CocWarningSign WarningMsgInverse
+hi! link CocInfoSign InfoMsgInverse
+hi! link CocHintSign SignMsgInverse
 hi! link CocErrorFloat ErrorMsg
 hi! link CocWarningFloat WarningMsg
-hi! link CocInfoFloat BogsterLBlue
-hi! link CocHintFloat BogsterTeal
+hi! link CocInfoFloat InfoMsg
+hi! link CocHintFloat HintMsg
 hi! link CocDiagnosticsError ErrorMsg
 hi! link CocDiagnosticsWarning WarningMsg
-hi! link CocDiagnosticsInfo BogsterLBlue
-hi! link CocDiagnosticsHint BogsterTeal
+hi! link CocDiagnosticsInfo InfoMsg
+hi! link CocDiagnosticsHint HintMsg
 hi! link CocSelectedText BogsterLRed
 hi! link CocCodeLens BogsterBase3
 
@@ -305,6 +311,16 @@ call s:__hl("CocErrorHighlight", "none", "none", "undercurl,bold")
 hi! link CocWarningHighlight CocErrorHighlight
 hi! link CocInfoHighlight CocErrorHighlight
 hi! link CocHintHighlight CocErrorHighlight
+
+" NeoVim LSP
+hi! link LspDiagnosticsDefaultError ErrorMsg
+hi! link LspDiagnosticsDefaultWarning WarningMsg
+hi! link LspDiagnosticsDefaultInformation InfoMsg
+hi! link LspDiagnosticsDefaultHint HintMsg
+hi! link LspDiagnosticsSignError ErrorMsgInverse
+hi! link LspDiagnosticsSignWarning WarningMsgInverse
+hi! link LspDiagnosticsSignInformation InfoMsgInverse
+hi! link LspDiagnosticsSignHint HintMsgInverse
 
 " CSS
 hi! link cssClassName Type
