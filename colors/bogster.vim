@@ -144,14 +144,16 @@ call s:__hl("BogsterBase6", "base6")
 call s:__hl("BogsterFg0", "fg0")
 call s:__hl("BogsterFg1", "fg1")
 call s:__hl("BogsterFg1Bold", "fg1", "none", "bold")
+call s:__hl("BogsterFg1Under", "fg1", "none", "underline")
 call s:__hl("BogsterLRed", "lred")
-call s:__hl("BogsterRed", "lred")
+call s:__hl("BogsterRed", "red")
 call s:__hl("BogsterRedUnder", "lred", "none", "undercurl")
 call s:__hl("BogsterRedBold", "lred", "none", "bold")
 call s:__hl("BogsterOrange", "orange")
 call s:__hl("BogsterYellow", "yellow")
 call s:__hl("BogsterYellowBold", "yellow", "none", "bold")
 call s:__hl("BogsterLTeal", "lteal")
+call s:__hl("BogsterTeal", "teal")
 call s:__hl("BogsterLBlue", "lblue")
 call s:__hl("BogsterBlue", "blue")
 call s:__hl("BogsterBlueItalic", "blue", "none", "italic")
@@ -202,7 +204,7 @@ hi! link Comment BogsterBase5
 hi! link Ignore BogsterBase5
 hi! link Conceal Ignore
 hi! link Conditional Statement
-hi! link Constant Bogsterlteal
+hi! link Constant BogsterLTeal
 hi! link Debug Special
 hi! link Define PreProc
 hi! link Delimiter BogsterOrange
@@ -218,6 +220,7 @@ hi! link Keyword BogsterYellow
 hi! link Label BogsterBlue
 hi! link LibraryFunc Function
 hi! link LibraryIdent Identifier
+hi! link Type BogsterLRed
 hi! link LibraryType Type
 hi! link LineNr BogsterBase3
 hi! link LocalFunc Function
@@ -257,7 +260,6 @@ hi! link Tag Special
 hi! link Terminal Normal
 hi! link Title BogsterFg0
 hi! link Todo BogsterRedBold
-hi! link Type BogsterLRed
 hi! link Underlined BogsterBlueUnder
 
 " ALE
@@ -436,3 +438,56 @@ hi! link vimHiGroup Type
 hi! link vimGroup Type
 hi! link vimContinue vimOper
 hi! link vimUserFunc Function
+
+" treesitter
+hi! link TSBoolean Boolean
+hi! link TSCharacter Character
+hi! link TSComment Comment
+hi! link TSConditional Keyword
+hi! link TSConstant Normal
+hi! link TSConstBuiltin PreProc
+hi! link TSConstMacro PreProc
+hi! link TSConstructor PreProc
+hi! link TSError Error
+hi! link TSException Keyword
+hi! link TSField Normal
+hi! link TSFloat Number
+hi! link TSFunction Function
+hi! link TSFuncBuiltin Function
+hi! link TSFuncMacro PreProc
+hi! link TSInclude PreProc
+hi! link TSKeyword Keyword
+hi! link TSKeywordOperator Keyword
+hi! link TSLabel PreProc
+hi! link TSMethod Function
+hi! link TSNamespace Normal
+hi! link TSNumber Number
+hi! link TSOperator Operator
+hi! link TSParameter Normal
+hi! link TSParameterReference Normal
+hi! link TSProperty Normal
+hi! link TSPunctDelimiter Delimiter
+hi! link TSPunctBracket Delimiter
+hi! link TSPunctSpecial Delimiter
+hi! link TSRepeat Keyword
+hi! link TSString Constant
+hi! link TSStringRegex BogsterTeal
+hi! link TSStringEscape Special
+hi! link TSSymbol Constant
+hi! link TSTagDelimiter Delimiter
+hi! link TSText Normal
+hi! link TSStrong BogsterFg1Bold
+hi! link TSUnderline BogsterFg1Under
+hi! link TSTitle Keyword
+hi! link TSLiteral Normal
+hi! link TSURI BogsterBlue
+hi! link TSMath Constant
+hi! link TSTextReference Comment
+hi! link TSEnvironmentName PreProc
+hi! link TSNote Comment
+hi! link TSWarning BogsterOrange
+hi! link TSDanger BogsterRed
+hi! link TSType Type
+hi! link TSTypeBuiltin Type
+hi! link TSVariable Normal
+hi! link TSVariableBuiltin BogsterTeal
