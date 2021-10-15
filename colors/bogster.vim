@@ -188,6 +188,7 @@ call s:__hl("BogsterBase6", "base6")
 call s:__hl("BogsterFg0", "fg0")
 call s:__hl("BogsterFg1", "fg1")
 call s:__hl("BogsterFg1Bold", "fg1", "none", "bold")
+call s:__hl("BogsterFg1Under", "fg1", "none", "underline")
 call s:__hl("BogsterUnder", "none", "none", "underline")
 call s:__hl("BogsterBold", "none", "none", "bold")
 call s:__hl("BogsterItalic", "none", "none", "italic")
@@ -202,6 +203,13 @@ call s:__hl("DiffAdd", "green", "base0")
 call s:__hl("DiffChange", "yellow", "base0")
 call s:__hl("DiffDelete", "lred", "base0")
 call s:__hl("ErrorMsg", "red", "base1")
+call s:__hl("ErrorMsgInverse", "base1", "red")
+call s:__hl("WarningMsg", "orange", "base1")
+call s:__hl("WarningMsgInverse", "base1", "orange")
+call s:__hl("InfoMsgInverse", "base1", "lblue")
+call s:__hl("InfoMsg", "lblue", "base1")
+call s:__hl("HintMsgInverse", "base1", "teal")
+call s:__hl("HintMsg", "teal", "base1")
 call s:__hl("Error", "none", "lred")
 call s:__hl("Folded", "fg0", "base1")
 call s:__hl("MatchParen", "none", "base3")
@@ -210,12 +218,11 @@ call s:__hl("Pmenu", "fg0", "base1")
 call s:__hl("PmenuSel", "fg0", "base2")
 call s:__hl("Search", "base0", "fg1")
 call s:__hl("SignColumn", "none", "base0")
-call s:__hl("StatusLine", "base1", "base3")
-call s:__hl("StatusLineNC", "base1", "base3")
+call s:__hl("StatusLine", "fg1", "base3")
+call s:__hl("StatusLineNC", "base0", "base2")
 call s:__hl("Todo", "fg0", "base0")
 call s:__hl("VertSplit", "base1", "base1")
 call s:__hl("Visual", "none", "base0", "reverse")
-call s:__hl("WarningMsg", "orange", "base1")
 
 "########################################
 " links
@@ -227,7 +234,7 @@ hi! link Comment BogsterBase5
 hi! link Ignore BogsterBase5
 hi! link Conceal Ignore
 hi! link Conditional Statement
-hi! link Constant Bogsterlteal
+hi! link Constant BogsterLTeal
 hi! link Debug Special
 hi! link Define PreProc
 hi! link Delimiter BogsterOrange
@@ -243,6 +250,7 @@ hi! link Keyword BogsterYellow
 hi! link Label BogsterBlue
 hi! link LibraryFunc Function
 hi! link LibraryIdent Identifier
+hi! link Type BogsterLRed
 hi! link LibraryType Type
 hi! link LineNr BogsterBase3
 hi! link LocalFunc Function
@@ -282,7 +290,6 @@ hi! link Tag Special
 hi! link Terminal Normal
 hi! link Title BogsterFg0
 hi! link Todo BogsterRedBold
-hi! link Type BogsterLRed
 hi! link Underlined BogsterBlueUnder
 
 " ALE
@@ -317,18 +324,18 @@ hi! link cConstant BogsterLBlue
 
 " Coc
 
-hi! link CocErrorSign ErrorMsg
-hi! link CocWarningSign WarningMsg
-hi! link CocInfoSign BogsterLBlue
-hi! link CocHintSign BogsterTeal
+hi! link CocErrorSign ErrorMsgInverse
+hi! link CocWarningSign WarningMsgInverse
+hi! link CocInfoSign InfoMsgInverse
+hi! link CocHintSign SignMsgInverse
 hi! link CocErrorFloat ErrorMsg
 hi! link CocWarningFloat WarningMsg
-hi! link CocInfoFloat BogsterLBlue
-hi! link CocHintFloat BogsterTeal
+hi! link CocInfoFloat InfoMsg
+hi! link CocHintFloat HintMsg
 hi! link CocDiagnosticsError ErrorMsg
 hi! link CocDiagnosticsWarning WarningMsg
-hi! link CocDiagnosticsInfo BogsterLBlue
-hi! link CocDiagnosticsHint BogsterTeal
+hi! link CocDiagnosticsInfo InfoMsg
+hi! link CocDiagnosticsHint HintMsg
 hi! link CocSelectedText BogsterLRed
 hi! link CocCodeLens BogsterBase3
 
@@ -336,6 +343,16 @@ call s:__hl("CocErrorHighlight", "none", "none", "undercurl,bold")
 hi! link CocWarningHighlight CocErrorHighlight
 hi! link CocInfoHighlight CocErrorHighlight
 hi! link CocHintHighlight CocErrorHighlight
+
+" NeoVim LSP
+hi! link LspDiagnosticsDefaultError ErrorMsg
+hi! link LspDiagnosticsDefaultWarning WarningMsg
+hi! link LspDiagnosticsDefaultInformation InfoMsg
+hi! link LspDiagnosticsDefaultHint HintMsg
+hi! link LspDiagnosticsSignError ErrorMsgInverse
+hi! link LspDiagnosticsSignWarning WarningMsgInverse
+hi! link LspDiagnosticsSignInformation InfoMsgInverse
+hi! link LspDiagnosticsSignHint HintMsgInverse
 
 " CSS
 hi! link cssClassName Type
@@ -451,3 +468,56 @@ hi! link vimHiGroup Type
 hi! link vimGroup Type
 hi! link vimContinue vimOper
 hi! link vimUserFunc Function
+
+" treesitter
+hi! link TSBoolean Boolean
+hi! link TSCharacter Character
+hi! link TSComment Comment
+hi! link TSConditional Keyword
+hi! link TSConstant Normal
+hi! link TSConstBuiltin PreProc
+hi! link TSConstMacro PreProc
+hi! link TSConstructor PreProc
+hi! link TSError Error
+hi! link TSException Keyword
+hi! link TSField Normal
+hi! link TSFloat Number
+hi! link TSFunction Function
+hi! link TSFuncBuiltin Function
+hi! link TSFuncMacro PreProc
+hi! link TSInclude PreProc
+hi! link TSKeyword Keyword
+hi! link TSKeywordOperator Keyword
+hi! link TSLabel PreProc
+hi! link TSMethod Function
+hi! link TSNamespace Normal
+hi! link TSNumber Number
+hi! link TSOperator Operator
+hi! link TSParameter Normal
+hi! link TSParameterReference Normal
+hi! link TSProperty Normal
+hi! link TSPunctDelimiter Delimiter
+hi! link TSPunctBracket Delimiter
+hi! link TSPunctSpecial Delimiter
+hi! link TSRepeat Keyword
+hi! link TSString Constant
+hi! link TSStringRegex BogsterTeal
+hi! link TSStringEscape Special
+hi! link TSSymbol Constant
+hi! link TSTagDelimiter Delimiter
+hi! link TSText Normal
+hi! link TSStrong BogsterFg1Bold
+hi! link TSUnderline BogsterFg1Under
+hi! link TSTitle Keyword
+hi! link TSLiteral Normal
+hi! link TSURI BogsterBlue
+hi! link TSMath Constant
+hi! link TSTextReference Comment
+hi! link TSEnvironmentName PreProc
+hi! link TSNote Comment
+hi! link TSWarning BogsterOrange
+hi! link TSDanger BogsterRed
+hi! link TSType Type
+hi! link TSTypeBuiltin Type
+hi! link TSVariable Normal
+hi! link TSVariableBuiltin BogsterTeal
