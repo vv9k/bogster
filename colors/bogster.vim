@@ -39,7 +39,7 @@ let g:bogster_colors = {
 if (&background ==# 'light')
     let g:bogster_colors["fg0"] = g:bogster_colors["base1"]
     let g:bogster_colors["fg1"] = g:bogster_colors["base0"]
-    let g:bogster_colors["base0"] = ["#e7e7df", 230]
+    let g:bogster_colors["base0"] = ["#f6fbd6", 230]
     let g:bogster_colors["base1"] = ["#c7c7ba", 187]
     let g:bogster_colors["base2"] = ["#aaaa97", 144]
     let g:bogster_colors["blue"] = ["#289cbc", 38]
