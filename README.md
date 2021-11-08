@@ -15,7 +15,8 @@ colorscheme bogster
 
 ## Screenshots
 
-![screenshot](https://raw.githubusercontent.com/vv9k/bogster/master/assets/screen.png)
+![screenshot-dark-theme](https://raw.githubusercontent.com/vv9k/bogster/master/assets/screen.png)
+![screenshot-light-theme](https://raw.githubusercontent.com/vv9k/bogster/master/assets/screen_light.png)
 
 ## License
 [MIT](https://raw.githubusercontent.com/vv9k/bogster/master/LICENSE)
