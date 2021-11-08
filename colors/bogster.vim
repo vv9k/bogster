@@ -22,17 +22,28 @@ let g:bogster_colors = {
   \ "red"          : ["#d32c5d", 204],
   \ "lred"         : ["#dc597f", 211],
   \ "orange"       : ["#dc7759", 209],
+  \ "dyellow"      : ["#A58023", 136],
   \ "yellow"       : ["#dcb659", 221],
-  \ "green"        : ["#5dd32c", 118],
+  \ "green"        : ["#57a331", 118],
   \ "lgreen"       : ["#7fdc59", 120],
-  \ "blue"         : ["#59c0dc", 80],
+  \ "dblue"        : ["#1e758d", 31],
+  \ "blue"         : ["#36b2d4", 80],
   \ "lblue"        : ["#59dcd8", 86],
   \ "purp"         : ["#b759dc", 171],
   \ "pink"         : ["#dc59c0", 206],
-  \ "teal"         : ["#2cd3a4", 43],
+  \ "teal"         : ["#23a580", 36],
   \ "lteal"        : ["#59dcb7", 50],
   \ "none"         : ["NONE", "NONE"]
   \ }
+
+if (&background ==# 'light')
+    let g:bogster_colors["fg0"] = g:bogster_colors["base1"]
+    let g:bogster_colors["fg1"] = g:bogster_colors["base0"]
+    let g:bogster_colors["base0"] = ["#f6fbd6", 230]
+    let g:bogster_colors["base1"] = ["#c7c7ba", 187]
+    let g:bogster_colors["base2"] = ["#aaaa97", 144]
+    let g:bogster_colors["blue"] = ["#289cbc", 38]
+endif
 
 " if doesn't support termguicolors or < 256 colors exit
 if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
@@ -134,6 +145,39 @@ let s:t_Co = exists('&t_Co') && !empty(&t_Co) && &t_Co > 1 ? &t_Co : 2
 "########################################
 " set the colors
 
+if (&background ==# 'light')
+    call s:__hl("BogsterLRed", "red")
+    call s:__hl("BogsterRed", "red")
+    call s:__hl("BogsterRedUnder", "red", "none", "undercurl")
+    call s:__hl("BogsterRedBold", "red", "none", "bold")
+    call s:__hl("BogsterOrange", "orange")
+    call s:__hl("BogsterYellow", "dyellow")
+    call s:__hl("BogsterYellowBold", "dyellow", "none", "bold")
+    call s:__hl("BogsterLTeal", "teal")
+    call s:__hl("BogsterTeal", "teal")
+    call s:__hl("BogsterLBlue", "blue")
+    call s:__hl("BogsterBlue", "dblue")
+    call s:__hl("BogsterBlueItalic", "dblue", "none", "italic")
+    call s:__hl("BogsterBlueUnder", "dblue", "none", "underline")
+    call s:__hl("BogsterLGreen", "green")
+else
+    call s:__hl("BogsterLRed", "lred")
+    call s:__hl("BogsterRed", "red")
+    call s:__hl("BogsterRedUnder", "red", "none", "undercurl")
+    call s:__hl("BogsterRedBold", "red", "none", "bold")
+    call s:__hl("BogsterOrange", "orange")
+    call s:__hl("BogsterYellow", "yellow")
+    call s:__hl("BogsterYellowBold", "yellow", "none", "bold")
+    call s:__hl("BogsterLTeal", "lteal")
+    call s:__hl("BogsterTeal", "teal")
+    call s:__hl("BogsterLBlue", "lblue")
+    call s:__hl("BogsterBlue", "blue")
+    call s:__hl("BogsterBlueItalic", "blue", "none", "italic")
+    call s:__hl("BogsterBlueUnder", "blue", "none", "underline")
+    call s:__hl("BogsterLGreen", "lgreen")
+endif
+
+
 call s:__hl("BogsterBase0", "base0")
 call s:__hl("BogsterBase1", "base1")
 call s:__hl("BogsterBase2", "base2")
@@ -145,20 +189,6 @@ call s:__hl("BogsterFg0", "fg0")
 call s:__hl("BogsterFg1", "fg1")
 call s:__hl("BogsterFg1Bold", "fg1", "none", "bold")
 call s:__hl("BogsterFg1Under", "fg1", "none", "underline")
-call s:__hl("BogsterLRed", "lred")
-call s:__hl("BogsterRed", "red")
-call s:__hl("BogsterRedUnder", "lred", "none", "undercurl")
-call s:__hl("BogsterRedBold", "lred", "none", "bold")
-call s:__hl("BogsterOrange", "orange")
-call s:__hl("BogsterYellow", "yellow")
-call s:__hl("BogsterYellowBold", "yellow", "none", "bold")
-call s:__hl("BogsterLTeal", "lteal")
-call s:__hl("BogsterTeal", "teal")
-call s:__hl("BogsterLBlue", "lblue")
-call s:__hl("BogsterBlue", "blue")
-call s:__hl("BogsterBlueItalic", "blue", "none", "italic")
-call s:__hl("BogsterBlueUnder", "blue", "none", "underline")
-call s:__hl("BogsterLGreen", "lgreen")
 call s:__hl("BogsterUnder", "none", "none", "underline")
 call s:__hl("BogsterBold", "none", "none", "bold")
 call s:__hl("BogsterItalic", "none", "none", "italic")
@@ -424,7 +454,7 @@ hi! link rustEnumVariant rustType
 hi! link rustConditional Keyword
 hi! link rustRepeat Keyword
 hi! link rustSigil BogsterOrange
-hi! link rustCommentLineDoc BogsterBase6
+hi! link rustCommentLineDoc PreProc
 hi! link rustQuestionMark Operator
 hi! link rustModPath BogsterLRed
 
