@@ -80,7 +80,7 @@ if has('nvim')
 endif
 
 " Terminal colors for Vim
-if has('*term_setansicolors')
+if exists('*term_setansicolors')
     let g:terminal_ansi_colors = repeat([0], 16)
 
     let g:terminal_ansi_colors[0] = g:bogster_colors["base0"][0]
