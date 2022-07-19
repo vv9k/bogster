@@ -202,14 +202,14 @@ call s:__hl("CursorLineNr", "lblue", "base2")
 call s:__hl("DiffAdd", "green", "base0")
 call s:__hl("DiffChange", "yellow", "base0")
 call s:__hl("DiffDelete", "lred", "base0")
-call s:__hl("ErrorMsg", "red", "base1")
-call s:__hl("ErrorMsgInverse", "base1", "red")
-call s:__hl("WarningMsg", "orange", "base1")
-call s:__hl("WarningMsgInverse", "base1", "orange")
-call s:__hl("InfoMsgInverse", "base1", "lblue")
-call s:__hl("InfoMsg", "lblue", "base1")
-call s:__hl("HintMsgInverse", "base1", "teal")
-call s:__hl("HintMsg", "teal", "base1")
+call s:__hl("ErrorMsg", "red", "base0")
+call s:__hl("ErrorMsgInverse", "base0", "red")
+call s:__hl("WarningMsg", "orange", "base0")
+call s:__hl("WarningMsgInverse", "base0", "orange")
+call s:__hl("InfoMsgInverse", "base0", "lblue")
+call s:__hl("InfoMsg", "lblue", "base0")
+call s:__hl("HintMsgInverse", "base0", "teal")
+call s:__hl("HintMsg", "teal", "base0")
 call s:__hl("Error", "none", "lred")
 call s:__hl("Folded", "fg0", "base1")
 call s:__hl("MatchParen", "none", "base3")
@@ -345,10 +345,19 @@ hi! link CocInfoHighlight CocErrorHighlight
 hi! link CocHintHighlight CocErrorHighlight
 
 " NeoVim LSP
+hi! link DiagnosticHint HintMsg
+hi! link DiagnosticWarn WarnMsg
+hi! link DiagnosticError ErrorMsg
+hi! link DiagnosticInfo InfoMsg
+
 hi! link LspDiagnosticsDefaultError ErrorMsg
 hi! link LspDiagnosticsDefaultWarning WarningMsg
 hi! link LspDiagnosticsDefaultInformation InfoMsg
 hi! link LspDiagnosticsDefaultHint HintMsg
+hi! link LspDiagnosticsError LspDiagnosticsDefaultError
+hi! link LspDiagnosticsWarning LspDiagnosticsDefaultWarning
+hi! link LspDiagnosticsInformation LspDiagnosticsDefaultInformation
+hi! link LspDiagnosticsHint LspDiagnosticsDefaultHint
 hi! link LspDiagnosticsSignError ErrorMsgInverse
 hi! link LspDiagnosticsSignWarning WarningMsgInverse
 hi! link LspDiagnosticsSignInformation InfoMsgInverse
