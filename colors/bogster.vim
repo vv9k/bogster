@@ -42,7 +42,15 @@ if (&background ==# 'light')
     let g:bogster_colors["base0"] = ["#f6fbd6", 230]
     let g:bogster_colors["base1"] = ["#c7c7ba", 187]
     let g:bogster_colors["base2"] = ["#aaaa97", 144]
-    let g:bogster_colors["blue"] = ["#289cbc", 38]
+    let g:bogster_colors["teal"] = ["#0ba579", 36]
+    let g:bogster_colors["green"] = ["#0ba52c", 118]
+    let g:bogster_colors["blue"] = ["#0b84a5", 80]
+    let g:bogster_colors["dblue"] = ["#0b37a5", 31]
+    let g:bogster_colors["purp"] = ["#790ba5", 171]
+    let g:bogster_colors["pink"] = ["#a50b84", 206]
+    let g:bogster_colors["red"] = ["#a50b37", 204]
+    let g:bogster_colors["orange"] = ["#a5790b", 209]
+    let g:bogster_colors["yellow"] = ["#84a50b", 221]
 endif
 
 " if doesn't support termguicolors or < 256 colors exit
